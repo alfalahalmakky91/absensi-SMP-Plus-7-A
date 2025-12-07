@@ -1,497 +1,186 @@
 <!DOCTYPE html>
-<html lang="id">
+<html>
 <head>
 <meta charset="UTF-8">
 <title>Presensi Kelas 7A</title>
 
 <style>
     body {
-        background: #f2f7ff; 
-        font-family: "Segoe UI", Arial, sans-serif;
-        color: #333;
+        font-family: Arial, sans-serif;
+        background: #e7f0ff;
         padding: 20px;
     }
-
     h1, h3 {
         text-align: center;
-        color: #2b4c8a;
     }
-
-    form {
+    .container {
         background: white;
-        width: 90%;
-        max-width: 500px;
-        margin: auto;
         padding: 20px;
-        border-radius: 12px;
-        box-shadow: 0 0 12px rgba(0,0,0,0.1);
-    }
-
-    input, select {
-        width: 100%;
-        padding: 10px;
-        margin-top: 6px;
-        margin-bottom: 15px;
-        border: 1px solid #ccc;
-        border-radius: 8px;
-        font-size: 15px;
-    }
-
-    button {
-        width: 100%;
-        padding: 12px;
-        font-size: 16px;
-        background: #2b4c8a;
-        color: white;
-        border: none;
         border-radius: 10px;
-        cursor: pointer;
-        transition: 0.2s;
+        max-width: 700px;
+        margin: auto;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
-
-    button:hover {
-        background: #1d325c;
+    label {
+        font-weight: bold;
     }
-
-    hr {
+    select, input {
+        width: 100%;
+        padding: 6px;
+        margin-top: 5px;
+    }
+    .btn {
+        background: #007bff;
+        color: white;
+        padding: 10px 15px;
         border: none;
-        height: 2px;
-        background: #cfdaf1;
-        margin: 20px 0;
+        margin-top: 15px;
+        width: 100%;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 5px;
     }
 </style>
 
 </head>
-
 <body>
+
+<div class="container">
 
 <h1>Presensi Kelas 7A</h1>
 <h3>SMP Plus Al-Falah Al-Makky</h3>
-
 <hr>
 
-<form id="laporanForm">
+<label>Mapel:</label>
+<input type="text" id="mapel">
 
-    Mapel:
-    <input type="text" id="mapel">
+<label>Nama Guru:</label>
+<input type="text" id="nama_guru">
 
-    Nama Guru:
-    <input type="text" id="nama_guru">
+<label>Hari & Tanggal:</label>
+<input type="text" id="hari_tanggal">
 
-    Hari, Tanggal:
-    <input type="text" id="hari_tanggal">
+<label>Materi:</label>
+<input type="text" id="materi">
 
-    Materi:
-    <input type="text" id="materi">
-
-    <br><hr><br>
-<strong>Kehadiran Siswa:</strong><br><br>
-
-<!-- ===== DAFTAR SISWA (ID s1 - s36) ===== -->
-ABDUN RAJA ZULFA LADAIH:
-<select id="s1">
-    <option value="Hadir">Hadir</option>
-    <option value="Sakit">Sakit</option>
-    <option value="Izin">Izin</option>
-    <option value="Absen">Absen</option>
-</select>
-
-ACHMAD ALBA CHOIRUNNIZAM:
-<select id="s2">
-    <option value="Hadir">Hadir</option>
-    <option value="Sakit">Sakit</option>
-    <option value="Izin">Izin</option>
-    <option value="Absen">Absen</option>
-</select>
-
-ADAM A. BUSTOMI:
-<select id="s3">
-    <option value="Hadir">Hadir</option>
-    <option value="Sakit">Sakit</option>
-    <option value="Izin">Izin</option>
-    <option value="Absen">Absen</option>
-</select>
-
-AHMAD SAIFULLOH:
-<select id="s4">
-    <option value="Hadir">Hadir</option>
-    <option value="Sakit">Sakit</option>
-    <option value="Izin">Izin</option>
-    <option value="Absen">Absen</option>
-</select>
-
-AHMAD SYAMSUDIN:
-<select id="s5">
-    <option value="Hadir">Hadir</option>
-    <option value="Sakit">Sakit</option>
-    <option value="Izin">Izin</option>
-    <option value="Absen">Absen</option>
-</select>
-
-ALFINO R.:
-<select id="s6">
-    <option value="Hadir">Hadir</option>
-    <option value="Sakit">Sakit</option>
-    <option value="Izin">Izin</option>
-    <option value="Absen">Absen</option>
-</select>
-
-ANANDA RAFA ARIZKY RAMADHAN:
-<select id="s7">
-    <option value="Hadir">Hadir</option>
-    <option value="Sakit">Sakit</option>
-    <option value="Izin">Izin</option>
-    <option value="Absen">Absen</option>
-</select>
-
-ANAS MOENER:
-<select id="s8">
-    <option value="Hadir">Hadir</option>
-    <option value="Sakit">Sakit</option>
-    <option value="Izin">Izin</option>
-    <option value="Absen">Absen</option>
-</select>
-
-DIMAS KHOIRIL:
-<select id="s9">
-    <option value="Hadir">Hadir</option>
-    <option value="Sakit">Sakit</option>
-    <option value="Izin">Izin</option>
-    <option value="Absen">Absen</option>
-</select>
-
-HAFIDZ MAULANA HAQ:
-<select id="s10">
-    <option value="Hadir">Hadir</option>
-    <option value="Sakit">Sakit</option>
-    <option value="Izin">Izin</option>
-    <option value="Absen">Absen</option>
-</select>
-
-HASAN AMINULLOH:
-<select id="s11">
-    <option value="Hadir">Hadir</option>
-    <option value="Sakit">Sakit</option>
-    <option value="Izin">Izin</option>
-    <option value="Absen">Absen</option>
-</select>
-
-HASAN MUBAROK:
-<select id="s12">
-    <option value="Hadir">Hadir</option>
-    <option value="Sakit">Sakit</option>
-    <option value="Izin">Izin</option>
-    <option value="Absen">Absen</option>
-</select>
-
-HENDRA ADITYA SAPUTRA:
-<select id="s13">
-    <option value="Hadir">Hadir</option>
-    <option value="Sakit">Sakit</option>
-    <option value="Izin">Izin</option>
-    <option value="Absen">Absen</option>
-</select>
-
-JUNIOR VEGO WIJAYA:
-<select id="s14">
-    <option value="Hadir">Hadir</option>
-    <option value="Sakit">Sakit</option>
-    <option value="Izin">Izin</option>
-    <option value="Absen">Absen</option>
-</select>
-
-KEIALO GIOVANCO DA SELVA:
-<select id="s15">
-    <option value="Hadir">Hadir</option>
-    <option value="Sakit">Sakit</option>
-    <option value="Izin">Izin</option>
-    <option value="Absen">Absen</option>
-</select>
-
-KEILO GIOVINCO DA SELVA:
-<select id="s16">
-    <option value="Hadir">Hadir</option>
-    <option value="Sakit">Sakit</option>
-    <option value="Izin">Izin</option>
-    <option value="Absen">Absen</option>
-</select>
-
-KEVIN RAMADHANI:
-<select id="s17">
-    <option value="Hadir">Hadir</option>
-    <option value="Sakit">Sakit</option>
-    <option value="Izin">Izin</option>
-    <option value="Absen">Absen</option>
-</select>
-
-KHOIRUL FATIHIN:
-<select id="s18">
-    <option value="Hadir">Hadir</option>
-    <option value="Sakit">Sakit</option>
-    <option value="Izin">Izin</option>
-    <option value="Absen">Absen</option>
-</select>
-
-M KAYYIS KIROM:
-<select id="s19">
-    <option value="Hadir">Hadir</option>
-    <option value="Sakit">Sakit</option>
-    <option value="Izin">Izin</option>
-    <option value="Absen">Absen</option>
-</select>
-
-M. ALMAHENDRA:
-<select id="s20">
-    <option value="Hadir">Hadir</option>
-    <option value="Sakit">Sakit</option>
-    <option value="Izin">Izin</option>
-    <option value="Absen">Absen</option>
-</select>
-
-M. ALZAM RAIHAN SAID:
-<select id="s21">
-    <option value="Hadir">Hadir</option>
-    <option value="Sakit">Sakit</option>
-    <option value="Izin">Izin</option>
-    <option value="Absen">Absen</option>
-</select>
-
-M. ANWAR NUR:
-<select id="s22">
-    <option value="Hadir">Hadir</option>
-    <option value="Sakit">Sakit</option>
-    <option value="Izin">Izin</option>
-    <option value="Absen">Absen</option>
-</select>
-
-M. IQBAL ALFI SHOHEIF:
-<select id="s23">
-    <option value="Hadir">Hadir</option>
-    <option value="Sakit">Sakit</option>
-    <option value="Izin">Izin</option>
-    <option value="Absen">Absen</option>
-</select>
-
-M. NIZAM:
-<select id="s24">
-    <option value="Hadir">Hadir</option>
-    <option value="Sakit">Sakit</option>
-    <option value="Izin">Izin</option>
-    <option value="Absen">Absen</option>
-</select>
-
-M. ZIDNI M.:
-<select id="s25">
-    <option value="Hadir">Hadir</option>
-    <option value="Sakit">Sakit</option>
-    <option value="Izin">Izin</option>
-    <option value="Absen">Absen</option>
-</select>
-
-MOCH AMANAHTULAH RAMADHAN:
-<select id="s26">
-    <option value="Hadir">Hadir</option>
-    <option value="Sakit">Sakit</option>
-    <option value="Izin">Izin</option>
-    <option value="Absen">Absen</option>
-</select>
-
-MOHAMMAD ABDUL AZIS:
-<select id="s27">
-    <option value="Hadir">Hadir</option>
-    <option value="Sakit">Sakit</option>
-    <option value="Izin">Izin</option>
-    <option value="Absen">Absen</option>
-</select>
-
-MUHAMMAD ABID AQILA PRANAJA:
-<select id="s28">
-    <option value="Hadir">Hadir</option>
-    <option value="Sakit">Sakit</option>
-    <option value="Izin">Izin</option>
-    <option value="Absen">Absen</option>
-</select>
-
-MUHAMMAD ARSAKHA VIRENDRA RAMADHAN:
-<select id="s29">
-    <option value="Hadir">Hadir</option>
-    <option value="Sakit">Sakit</option>
-    <option value="Izin">Izin</option>
-    <option value="Absen">Absen</option>
-</select>
-
-MUHAMMAD DIMAS PRATAMA:
-<select id="s30">
-    <option value="Hadir">Hadir</option>
-    <option value="Sakit">Sakit</option>
-    <option value="Izin">Izin</option>
-    <option value="Absen">Absen</option>
-</select>
-
-MUHAMMAD ILHAM MUZAKI:
-<select id="s31">
-    <option value="Hadir">Hadir</option>
-    <option value="Sakit">Sakit</option>
-    <option value="Izin">Izin</option>
-    <option value="Absen">Absen</option>
-</select>
-
-MUHAMMAD NIZAMUDDIN:
-<select id="s32">
-    <option value="Hadir">Hadir</option>
-    <option value="Sakit">Sakit</option>
-    <option value="Izin">Izin</option>
-    <option value="Absen">Absen</option>
-</select>
-
-MUHAMMAD ZAINAL ARIFIN:
-<select id="s33">
-    <option value="Hadir">Hadir</option>
-    <option value="Sakit">Sakit</option>
-    <option value="Izin">Izin</option>
-    <option value="Absen">Absen</option>
-</select>
-
-NIZAM ARDIANSYAH:
-<select id="s34">
-    <option value="Hadir">Hadir</option>
-    <option value="Sakit">Sakit</option>
-    <option value="Izin">Izin</option>
-    <option value="Absen">Absen</option>
-</select>
-
-PUTRA YUSUF AFANDI:
-<select id="s35">
-    <option value="Hadir">Hadir</option>
-    <option value="Sakit">Sakit</option>
-    <option value="Izin">Izin</option>
-    <option value="Absen">Absen</option>
-</select>
-
-RIZQI CHOIRUL UMMAM:
-<select id="s36">
-    <option value="Hadir">Hadir</option>
-    <option value="Sakit">Sakit</option>
-    <option value="Izin">Izin</option>
-    <option value="Absen">Absen</option>
-</select>
 <br><br>
+<h3>Kehadiran Siswa</h3>
 
-<button type="button" onclick="kirimWhatsApp(); kirimSpreadsheet();">
-   Kirim Laporan
-</button>
+<div id="siswaList"></div>
 
-</form>
+<button class="btn" onclick="kirimLaporan()">Kirim Laporan</button>
 
-<script>
-function kirimWhatsApp() {
-    var mapel = document.getElementById("mapel").value;
-    var nama_guru = document.getElementById("nama_guru").value;
-    var hari_tanggal = document.getElementById("hari_tanggal").value;
-    var materi = document.getElementById("materi").value;
-
-    var siswa = [
-        { nama: "ABDUN RAJA ZULFA LADAIH", id: "s1" },
-        { nama: "ACHMAD ALBA CHOIRUNNIZAM", id: "s2" },
-        { nama: "ADAM A. BUSTOMI", id: "s3" },
-        { nama: "AHMAD SAIFULLOH", id: "s4" },
-        { nama: "AHMAD SYAMSUDIN", id: "s5" },
-        { nama: "ALFINO R.", id: "s6" },
-        { nama: "ANANDA RAFA ARIZKY RAMADHAN", id: "s7" },
-        { nama: "ANAS MOENER", id: "s8" },
-        { nama: "DIMAS KHOIRIL", id: "s9" },
-        { nama: "HAFIDZ MAULANA HAQ", id: "s10" },
-        { nama: "HASAN AMINULLOH", id: "s11" },
-        { nama: "HASAN MUBAROK", id: "s12" },
-        { nama: "HENDRA ADITYA SAPUTRA", id: "s13" },
-        { nama: "JUNIOR VEGO WIJAYA", id: "s14" },
-        { nama: "KEIALO GIOVANCO DA SELVA", id: "s15" },
-        { nama: "KEILO GIOVINCO DA SELVA", id: "s16" },
-        { nama: "KEVIN RAMADHANI", id: "s17" },
-        { nama: "KHOIRUL FATIHIN", id: "s18" },
-        { nama: "M KAYYIS KIROM", id: "s19" },
-        { nama: "M. ALMAHENDRA", id: "s20" },
-        { nama: "M. ALZAM RAIHAN SAID", id: "s21" },
-        { nama: "M. ANWAR NUR", id: "s22" },
-        { nama: "M. IQBAL ALFI SHOHEIF", id: "s23" },
-        { nama: "M. NIZAM", id: "s24" },
-        { nama: "M. ZIDNI M.", id: "s25" },
-        { nama: "MOCH AMANAHTULAH RAMADHAN", id: "s26" },
-        { nama: "MOHAMMAD ABDUL AZIS", id: "s27" },
-        { nama: "MUHAMMAD ABID AQILA PRANAJA", id: "s28" },
-        { nama: "MUHAMMAD ARSAKHA VIRENDRA RAMADHAN", id: "s29" },
-        { nama: "MUHAMMAD DIMAS PRATAMA", id: "s30" },
-        { nama: "MUHAMMAD ILHAM MUZAKI", id: "s31" },
-        { nama: "MUHAMMAD NIZAMUDDIN", id: "s32" },
-        { nama: "MUHAMMAD ZAINAL ARIFIN", id: "s33" },
-        { nama: "NIZAM ARDIANSYAH", id: "s34" },
-        { nama: "PUTRA YUSUF AFANDI", id: "s35" },
-        { nama: "RIZQI CHOIRUL UMMAM", id: "s36" }
-    ];
-
-    var laporan_siswa = "";
-
-    siswa.forEach(function(s){
-        var status = document.getElementById(s.id).value;
-        var simbol = "";
-
-        if(status === "Hadir") simbol = "✔";
-        else if(status === "Sakit") simbol = "[S]";
-        else if(status === "Izin") simbol = "[i]";
-        else if(status === "Absen") simbol = "[A]";
-
-        var namaTampil = (status === "Absen") ? `*${s.nama}*` : s.nama;
-
-        laporan_siswa += `- ${namaTampil}: ${simbol}%0A`;
-    });
-
-    var pesan = 
-        `*Laporan Kehadiran Kelas 7A*%0A%0A` +
-        `Mapel: ${mapel}%0A` +
-        `Nama Guru: ${nama_guru}%0A` +
-        `Hari, Tanggal: ${hari_tanggal}%0A` +
-        `Materi: ${materi}%0A%0A` +
-        `Kehadiran Siswa:%0A` +
-        laporan_siswa;
-   
-    window.location.href = "https://wa.me/6282223331745?text=" + pesan;
-}
-</script>
+</div>
 
 <script>
-function kirimSpreadsheet() {
+// ================================
+// DAFTAR SISWA
+// ================================
+const siswa = [
+  "ABDUN RAJA ZULFA LADAIH",
+  "ACHMAD ALBA CHOIRUNNIZAM",
+  "ADAM A. BUSTOMI",
+  "AHMAD SAIFULLOH",
+  "AHMAD SYAMSUDIN",
+  "ALFINO R.",
+  "ANANDA RAFA ARIZKY RAMADHAN",
+  "ANAS MOENER",
+  "DIMAS KHOIRIL",
+  "HAFIDZ MAULANA HAQ",
+  "HASAN AMINULLOH",
+  "HASAN MUBAROK",
+  "HENDRA ADITYA SAPUTRA",
+  "JUNIOR VEGO WIJAYA",
+  "KEIALO GIOVANCO DA SELVA",
+  "KEILO GIOVINCO DA SELVA",
+  "KEVIN RAMADHANI",
+  "KHOIRUL FATIHIN",
+  "M KAYYIS KIROM",
+  "M. ALMAHENDRA",
+  "M. ALZAM RAIHAN SAID",
+  "M. ANWAR NUR",
+  "M. IQBAL ALFI SHOHEIF",
+  "M. NIZAM",
+  "M. ZIDNI M.",
+  "MOCH AMANAHTULAH RAMADHAN",
+  "MOHAMMAD ABDUL AZIS",
+  "MUHAMMAD ABID AQILA PRANAJA",
+  "MUHAMMAD ARSAKHA VIRENDRA RAMADHAN",
+  "MUHAMMAD DIMAS PRATAMA",
+  "MUHAMMAD ILHAM MUZAKI",
+  "MUHAMMAD NIZAMUDDIN",
+  "MUHAMMAD ZAINAL ARIFIN",
+  "NIZAM ARDIANSYAH",
+  "PUTRA YUSUF AFANDI",
+  "RIZQI CHOIRUL UMMAM"
+];
 
-    const url = "https://script.google.com/macros/s/AKfycbx69WV-MlJOsueDf9dbH9QpC0o0qA-tQuoneJMmhpx5PPlZ1xG5FgrFjF8glIRY4-2ovg/exec";
+// =====================================
+// MEMBUAT LIST DROPDOWN SECARA DINAMIS
+// =====================================
+let html = "";
+siswa.forEach((nama, i) => {
+    html += `
+      <label>${nama}</label>
+      <select id="s${i}">
+          <option value="Hadir">Hadir</option>
+          <option value="Sakit">Sakit</option>
+          <option value="Izin">Izin</option>
+          <option value="Absen">Absen</option>
+      </select>
+      <br><br>
+    `;
+});
+document.getElementById("siswaList").innerHTML = html;
 
-    const siswa = [
-        "s1","s2","s3","s4","s5","s6","s7","s8","s9","s10",
-        "s11","s12","s13","s14","s15","s16","s17","s18","s19","s20",
-        "s21","s22","s23","s24","s25","s26","s27","s28","s29","s30",
-        "s31","s32","s33","s34","s35","s36"
-    ];
 
-    const dataSiswa = {};
+// ================================
+// KIRIM LAPORAN
+// ================================
+function kirimLaporan() {
 
-    siswa.forEach(id => {
-        dataSiswa[id] = document.getElementById(id).value;
-    });
+    let mapel = document.getElementById("mapel").value;
+    let guru = document.getElementById("nama_guru").value;
+    let hari = document.getElementById("hari_tanggal").value;
+    let materi = document.getElementById("materi").value;
 
-    const data = {
-        mapel: document.getElementById("mapel").value,
-        nama_guru: document.getElementById("nama_guru").value,
-        hari_tanggal: document.getElementById("hari_tanggal").value,
-        materi: document.getElementById("materi").value,
-        kehadiran: dataSiswa
-    };
+    // ambil status tiap siswa
+    let presensi = siswa.map((_, i) => document.getElementById("s" + i).value);
 
-    fetch(url, {
+    // -----------------------------------
+    // KIRIM ke GOOGLE SPREADSHEET
+    // -----------------------------------
+    fetch("https://script.google.com/macros/s/AKfycbyuTPK1W-Oi5zuxDyZIRaJeB7z-FbX3S0SBnOrhxh1E-xfdsqSFuknwWmAumjYlK6h6_A/exechttps://script.google.com/macros/s/AKfycbyuTPK1W-Oi5zuxDyZIRaJeB7z-FbX3S0SBnOrhxh1E-xfdsqSFuknwWmAumjYlK6h6_A/exec", {
         method: "POST",
-        mode: "no-cors",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data)
-    })
-    .then(() => alert("Data berhasil dikirim ke Spreadsheet"))
-    .catch(() => alert("Gagal mengirim ke Spreadsheet"));
+        body: JSON.stringify({
+            mapel: mapel,
+            nama_guru: guru,
+            hari_tanggal: hari,
+            materi: materi,
+            presensi: presensi
+        })
+    });
+
+    // -----------------------------------
+    // KIRIM ke WHATSAPP
+    // -----------------------------------
+    let teks = `*Laporan Kehadiran Kelas 7A*%0A%0A`;
+    teks += `Mapel: ${mapel}%0A`;
+    teks += `Guru: ${guru}%0A`;
+    teks += `Hari: ${hari}%0A`;
+    teks += `Materi: ${materi}%0A%0A`;
+
+    siswa.forEach((nama, i) => {
+        let st = presensi[i];
+        let simbol = st === "Hadir" ? "✔"
+                   : st === "Sakit" ? "[S]"
+                   : st === "Izin" ? "[i]"
+                   : "[A]";
+        let tampil = st === "Absen" ? `*${nama}*` : nama;
+        teks += `${tampil}: ${simbol}%0A`;
+    });
+
+    window.location.href = "https://wa.me/6282223331745?text=" + teks;
 }
 </script>
 
