@@ -7,70 +7,122 @@
 <style>
     body {
         font-family: Arial, sans-serif;
-        background: #e7f0ff;
+        background: #dce7ff;
         padding: 20px;
     }
-    h1, h3 {
-        text-align: center;
-    }
-    .container {
+
+    .card {
         background: white;
         padding: 20px;
-        border-radius: 10px;
-        max-width: 700px;
-        margin: auto;
-        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        border-radius: 12px;
+        max-width: 800px;
+        margin: 20px auto;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
+
+    .header-card {
+        background: linear-gradient(135deg, #4a6cf7, #6aa8ff);
+        color: white;
+        text-align: center;
+        padding: 25px;
+        border-radius: 12px;
+        margin-bottom: 25px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .header-card h1 {
+        margin: 0;
+        font-size: 28px;
+    }
+    
+    .header-card h3 {
+        margin: 5px 0 0 0;
+        font-weight: normal;
+    }
+
     label {
         font-weight: bold;
+        display: block;
+        margin-top: 15px;
     }
+
     select, input {
         width: 100%;
-        padding: 6px;
+        padding: 8px;
         margin-top: 5px;
+        border-radius: 6px;
+        border: 1px solid #aaa;
+        box-sizing: border-box;
+        font-size: 14px;
     }
+
     .btn {
-        background: #007bff;
+        background: #0066ff;
         color: white;
-        padding: 10px 15px;
+        padding: 12px 15px;
         border: none;
-        margin-top: 15px;
+        margin-top: 20px;
         width: 100%;
-        font-size: 16px;
+        font-size: 18px;
         cursor: pointer;
-        border-radius: 5px;
+        border-radius: 8px;
+        font-weight: bold;
+        letter-spacing: 0.5px;
+    }
+
+    .btn:hover {
+        background: #004fd4;
+    }
+
+    .title-section {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        border-left: 5px solid #4a6cf7;
+        padding-left: 10px;
     }
 </style>
 
 </head>
 <body>
 
-<div class="container">
+<!-- HEADER DALAM KOTAK -->
+<div class="header-card">
+    <h1>Presensi Kelas 7A</h1>
+    <h3>SMP Plus Al-Falah Al-Makky</h3>
+</div>
 
-<h1>Presensi Kelas 7A</h1>
-<h3>SMP Plus Al-Falah Al-Makky</h3>
-<hr>
+<!-- INFORMASI PRESENSI -->
+<div class="card">
 
-<label>Mapel:</label>
-<input type="text" id="mapel">
+    <div class="title-section">Informasi Presensi</div>
 
-<label>Nama Guru:</label>
-<input type="text" id="nama_guru">
+    <label>Mapel:</label>
+    <input type="text" id="mapel">
 
-<label>Hari & Tanggal:</label>
-<input type="text" id="hari_tanggal">
+    <label>Nama Guru:</label>
+    <input type="text" id="nama_guru">
 
-<label>Materi:</label>
-<input type="text" id="materi">
+    <label>Hari & Tanggal:</label>
+    <input type="text" id="hari_tanggal">
 
-<br><br>
-<h3>Kehadiran Siswa</h3>
-
-<div id="siswaList"></div>
-
-<button class="btn" onclick="kirimLaporan()">Kirim Laporan</button>
+    <label>Materi:</label>
+    <input type="text" id="materi">
 
 </div>
+
+<!-- KEHADIRAN SISWA -->
+<div class="card">
+
+    <div class="title-section">Kehadiran Siswa</div>
+
+    <div id="siswaList"></div>
+
+    <button class="btn" onclick="kirimLaporan()">Kirim Laporan</button>
+
+</div>
+
 
 <script>
 // ================================
@@ -128,7 +180,6 @@ siswa.forEach((nama, i) => {
           <option value="Izin">Izin</option>
           <option value="Absen">Absen</option>
       </select>
-      <br><br>
     `;
 });
 document.getElementById("siswaList").innerHTML = html;
@@ -144,12 +195,9 @@ function kirimLaporan() {
     let hari = document.getElementById("hari_tanggal").value;
     let materi = document.getElementById("materi").value;
 
-    // ambil status siswa
     let presensi = siswa.map((_, i) => document.getElementById("s" + i).value);
 
-    // -----------------------------------
-    // KIRIM KE GOOGLE SPREADSHEET
-    // -----------------------------------
+    // SEND TO GOOGLE SHEETS
     fetch("https://script.google.com/macros/s/AKfycbzf8TYRxz4ZWtjpTX6wkTRzGrppj7I6cv2ibjMHX0ioVnnuF5YT4HejiKmblyrOoyEwlw/exec", {
         method: "POST",
         body: JSON.stringify({
@@ -161,9 +209,7 @@ function kirimLaporan() {
         })
     });
 
-    // -----------------------------------
-    // KIRIM KE WHATSAPP
-    // -----------------------------------
+    // SEND TO WHATSAPP
     let teks = `*Laporan Kehadiran Kelas 7A*%0A%0A`;
     teks += `Mapel: ${mapel}%0A`;
     teks += `Guru: ${guru}%0A`;
