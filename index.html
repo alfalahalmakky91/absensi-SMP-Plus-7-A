@@ -87,7 +87,7 @@
     <br><hr><br>
 <strong>Kehadiran Siswa:</strong><br><br>
 
-<!-- Mulai daftar siswa -->
+<!-- ===== DAFTAR SISWA (ID s1 - s36) ===== -->
 ABDUN RAJA ZULFA LADAIH:
 <select id="s1">
     <option value="Hadir">Hadir</option>
@@ -377,7 +377,9 @@ RIZQI CHOIRUL UMMAM:
 </select>
 <br><br>
 
-<button type="button" onclick="kirimWhatsApp()">Kirim Laporan</button>
+<button type="button" onclick="kirimWhatsApp(); kirimSpreadsheet();">
+   Kirim Laporan
+</button>
 
 </form>
 
@@ -388,44 +390,44 @@ function kirimWhatsApp() {
     var hari_tanggal = document.getElementById("hari_tanggal").value;
     var materi = document.getElementById("materi").value;
 
-var siswa = [
-    { nama: "ABDUN RAJA ZULFA LADAIH", id: "s1" },
-    { nama: "ACHMAD ALBA CHOIRUNNIZAM", id: "s2" },
-    { nama: "ADAM A. BUSTOMI", id: "s3" },
-    { nama: "AHMAD SAIFULLOH", id: "s4" },
-    { nama: "AHMAD SYAMSUDIN", id: "s5" },
-    { nama: "ALFINO R.", id: "s6" },
-    { nama: "ANANDA RAFA ARIZKY RAMADHAN", id: "s7" },
-    { nama: "ANAS MOENER", id: "s8" },
-    { nama: "DIMAS KHOIRIL", id: "s9" },
-    { nama: "HAFIDZ MAULANA HAQ", id: "s10" },
-    { nama: "HASAN AMINULLOH", id: "s11" },
-    { nama: "HASAN MUBAROK", id: "s12" },
-    { nama: "HENDRA ADITYA SAPUTRA", id: "s13" },
-    { nama: "JUNIOR VEGO WIJAYA", id: "s14" },
-    { nama: "KEIALO GIOVANCO DA SELVA", id: "s15" },
-    { nama: "KEILO GIOVINCO DA SELVA", id: "s16" },
-    { nama: "KEVIN RAMADHANI", id: "s17" },
-    { nama: "KHOIRUL FATIHIN", id: "s18" },
-    { nama: "M KAYYIS KIROM", id: "s19" },
-    { nama: "M. ALMAHENDRA", id: "s20" },
-    { nama: "M. ALZAM RAIHAN SAID", id: "s21" },
-    { nama: "M. ANWAR NUR", id: "s22" },
-    { nama: "M. IQBAL ALFI SHOHEIF", id: "s23" },
-    { nama: "M. NIZAM", id: "s24" },
-    { nama: "M. ZIDNI M.", id: "s25" },
-    { nama: "MOCH AMANAHTULAH RAMADHAN", id: "s26" },
-    { nama: "MOHAMMAD ABDUL AZIS", id: "s27" },
-    { nama: "MUHAMMAD ABID AQILA PRANAJA", id: "s28" },
-    { nama: "MUHAMMAD ARSAKHA VIRENDRA RAMADHAN", id: "s29" },
-    { nama: "MUHAMMAD DIMAS PRATAMA", id: "s30" },
-    { nama: "MUHAMMAD ILHAM MUZAKI", id: "s31" },
-    { nama: "MUHAMMAD NIZAMUDDIN", id: "s32" },
-    { nama: "MUHAMMAD ZAINAL ARIFIN", id: "s33" },
-    { nama: "NIZAM ARDIANSYAH", id: "s34" },
-    { nama: "PUTRA YUSUF AFANDI", id: "s35" },
-    { nama: "RIZQI CHOIRUL UMMAM", id: "s36" }
-];
+    var siswa = [
+        { nama: "ABDUN RAJA ZULFA LADAIH", id: "s1" },
+        { nama: "ACHMAD ALBA CHOIRUNNIZAM", id: "s2" },
+        { nama: "ADAM A. BUSTOMI", id: "s3" },
+        { nama: "AHMAD SAIFULLOH", id: "s4" },
+        { nama: "AHMAD SYAMSUDIN", id: "s5" },
+        { nama: "ALFINO R.", id: "s6" },
+        { nama: "ANANDA RAFA ARIZKY RAMADHAN", id: "s7" },
+        { nama: "ANAS MOENER", id: "s8" },
+        { nama: "DIMAS KHOIRIL", id: "s9" },
+        { nama: "HAFIDZ MAULANA HAQ", id: "s10" },
+        { nama: "HASAN AMINULLOH", id: "s11" },
+        { nama: "HASAN MUBAROK", id: "s12" },
+        { nama: "HENDRA ADITYA SAPUTRA", id: "s13" },
+        { nama: "JUNIOR VEGO WIJAYA", id: "s14" },
+        { nama: "KEIALO GIOVANCO DA SELVA", id: "s15" },
+        { nama: "KEILO GIOVINCO DA SELVA", id: "s16" },
+        { nama: "KEVIN RAMADHANI", id: "s17" },
+        { nama: "KHOIRUL FATIHIN", id: "s18" },
+        { nama: "M KAYYIS KIROM", id: "s19" },
+        { nama: "M. ALMAHENDRA", id: "s20" },
+        { nama: "M. ALZAM RAIHAN SAID", id: "s21" },
+        { nama: "M. ANWAR NUR", id: "s22" },
+        { nama: "M. IQBAL ALFI SHOHEIF", id: "s23" },
+        { nama: "M. NIZAM", id: "s24" },
+        { nama: "M. ZIDNI M.", id: "s25" },
+        { nama: "MOCH AMANAHTULAH RAMADHAN", id: "s26" },
+        { nama: "MOHAMMAD ABDUL AZIS", id: "s27" },
+        { nama: "MUHAMMAD ABID AQILA PRANAJA", id: "s28" },
+        { nama: "MUHAMMAD ARSAKHA VIRENDRA RAMADHAN", id: "s29" },
+        { nama: "MUHAMMAD DIMAS PRATAMA", id: "s30" },
+        { nama: "MUHAMMAD ILHAM MUZAKI", id: "s31" },
+        { nama: "MUHAMMAD NIZAMUDDIN", id: "s32" },
+        { nama: "MUHAMMAD ZAINAL ARIFIN", id: "s33" },
+        { nama: "NIZAM ARDIANSYAH", id: "s34" },
+        { nama: "PUTRA YUSUF AFANDI", id: "s35" },
+        { nama: "RIZQI CHOIRUL UMMAM", id: "s36" }
+    ];
 
     var laporan_siswa = "";
 
@@ -451,12 +453,47 @@ var siswa = [
         `Materi: ${materi}%0A%0A` +
         `Kehadiran Siswa:%0A` +
         laporan_siswa;
-
+   
     window.location.href = "https://wa.me/6282223331745?text=" + pesan;
 }
 </script>
 
+<script>
+function kirimSpreadsheet() {
+
+    const url = "https://script.google.com/macros/s/AKfycbx69WV-MlJOsueDf9dbH9QpC0o0qA-tQuoneJMmhpx5PPlZ1xG5FgrFjF8glIRY4-2ovg/exec";
+
+    const siswa = [
+        "s1","s2","s3","s4","s5","s6","s7","s8","s9","s10",
+        "s11","s12","s13","s14","s15","s16","s17","s18","s19","s20",
+        "s21","s22","s23","s24","s25","s26","s27","s28","s29","s30",
+        "s31","s32","s33","s34","s35","s36"
+    ];
+
+    const dataSiswa = {};
+
+    siswa.forEach(id => {
+        dataSiswa[id] = document.getElementById(id).value;
+    });
+
+    const data = {
+        mapel: document.getElementById("mapel").value,
+        nama_guru: document.getElementById("nama_guru").value,
+        hari_tanggal: document.getElementById("hari_tanggal").value,
+        materi: document.getElementById("materi").value,
+        kehadiran: dataSiswa
+    };
+
+    fetch(url, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data)
+    })
+    .then(() => alert("Data berhasil dikirim ke Spreadsheet"))
+    .catch(() => alert("Gagal mengirim ke Spreadsheet"));
+}
+</script>
+
 </body>
-
 </html>
-
