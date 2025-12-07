@@ -116,7 +116,7 @@ const siswa = [
 ];
 
 // =====================================
-// MEMBUAT LIST DROPDOWN SECARA DINAMIS
+// GENERATE LIST SISWA + DROPDOWN
 // =====================================
 let html = "";
 siswa.forEach((nama, i) => {
@@ -135,7 +135,7 @@ document.getElementById("siswaList").innerHTML = html;
 
 
 // ================================
-// KIRIM LAPORAN
+// FUNGSI KIRIM LAPORAN
 // ================================
 function kirimLaporan() {
 
@@ -144,13 +144,13 @@ function kirimLaporan() {
     let hari = document.getElementById("hari_tanggal").value;
     let materi = document.getElementById("materi").value;
 
-    // ambil status tiap siswa
+    // ambil status siswa
     let presensi = siswa.map((_, i) => document.getElementById("s" + i).value);
 
     // -----------------------------------
-    // KIRIM ke GOOGLE SPREADSHEET
+    // KIRIM KE GOOGLE SPREADSHEET
     // -----------------------------------
-    fetch("https://script.google.com/macros/s/AKfycbyuTPK1W-Oi5zuxDyZIRaJeB7z-FbX3S0SBnOrhxh1E-xfdsqSFuknwWmAumjYlK6h6_A/exechttps://script.google.com/macros/s/AKfycbyuTPK1W-Oi5zuxDyZIRaJeB7z-FbX3S0SBnOrhxh1E-xfdsqSFuknwWmAumjYlK6h6_A/exec", {
+    fetch("https://script.google.com/macros/s/AKfycbzf8TYRxz4ZWtjpTX6wkTRzGrppj7I6cv2ibjMHX0ioVnnuF5YT4HejiKmblyrOoyEwlw/exec", {
         method: "POST",
         body: JSON.stringify({
             mapel: mapel,
@@ -162,7 +162,7 @@ function kirimLaporan() {
     });
 
     // -----------------------------------
-    // KIRIM ke WHATSAPP
+    // KIRIM KE WHATSAPP
     // -----------------------------------
     let teks = `*Laporan Kehadiran Kelas 7A*%0A%0A`;
     teks += `Mapel: ${mapel}%0A`;
